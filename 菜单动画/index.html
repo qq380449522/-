@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 30px;
+      height: 30px;
+      background: #000;
+      cursor: pointer;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+
+    span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #fff;
+      transition: all 0.1s linear;
+    }
+    .wrap {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .spanx1 {
+      transform: rotate(-40deg) translate(-10px);
+      transform-origin: center;
+      transition: all 0.1s linear;
+    }
+
+    .spanx2 {
+      transform: rotate(40deg) translate(-10px);
+      transform-origin: center;
+      transition: all 0.1s linear;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="wrap">
+      <span class="span1"></span>
+      <span class="span2"></span>
+      <span class="span3"></span>
+    </div>
+  </div>
+</body>
+<script>
+  const div = document.querySelector('.box')
+  const span1 = document.querySelector('.span1')
+  const span2 = document.querySelector('.span2')
+  const span3 = document.querySelector('.span3')
+  div.onmouseenter = () => {
+    span1.classList.add('spanx1')
+    span3.classList.add('spanx2')
+  }
+  div.onmouseleave = () => {
+    span1.classList.remove('spanx1')
+    span3.classList.remove('spanx2')
+  }
+</script>
+
+</html>
